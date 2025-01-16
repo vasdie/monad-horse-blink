@@ -33,35 +33,15 @@ cp .env.example .env
 
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
 ```
 
 2. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
-
-## Project Structure
-
-- `src/app/` - Next.js application routes and pages
-- `src/app/api/actions/` - API routes for handling donations
-- `src/monad.ts` - Monad blockchain configuration
-- `src/provider.tsx` - React providers setup
-- `src/config.ts` - Application configuration
 
 ## License
 

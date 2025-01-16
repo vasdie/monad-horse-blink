@@ -1,8 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blink Starter for Monad
+
+A Next.js-based starter template demonstrating how to integrate [Blinks](https://dialect.to/) with the Monad blockchain. This project showcases a simple donation application that allows users to send MON (Monad's native currency) to a specified wallet address.
+
+## Guide 🔥🔥🔥
+
+Learn how to build this Blink from scratch with our extensive guide:
+https://dialectlabs.notion.site/Donate-MON-with-a-Blink-17b478e30ab08072bbf1c21f760cf79d
+
+## Prerequisites
+
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+- A wallet with some MON tokens (for testing donations)
+
+## Environment Setup
+
+1. Copy the example environment file:
+
+```bash
+cp .env.example .env
+```
+
+2. Configure the following environment variables:
+
+- `NEXT_PUBLIC_CHAIN_ID`: Monad chain ID
+- `NEXT_PUBLIC_RPC_URL`: Monad RPC URL
+- `DONATION_WALLET`: The wallet address to receive donations
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+2. Run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +53,16 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/` - Next.js application routes and pages
+- `src/app/api/actions/` - API routes for handling donations
+- `src/monad.ts` - Monad blockchain configuration
+- `src/provider.tsx` - React providers setup
+- `src/config.ts` - Application configuration
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

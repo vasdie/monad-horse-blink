@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Navbar } from "@/components/navbar";
+
 // Providers are used to wrap the app in Wagmi and ConnectKit
 import { Providers } from "@/provider";
 import "./globals.css";
@@ -32,7 +34,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* Providers are used to wrap the app in Wagmi and ConnectKit */}
-        <Providers>{children}</Providers>
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   );

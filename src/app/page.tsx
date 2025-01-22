@@ -17,20 +17,22 @@ import { StepCard } from "@/components/step-card";
 // Text for the steps on the left side of the page for the user to follow
 const steps = [
   {
-    headline: "Interact with the Blink ",
-    text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    icon: "icon-cog",
+    chip: {
+      text: "Backend",
+      icon: "icon-cog",
+    },
+    headline: "Blink API",
+    text: "Blinks are headless APIs that return transactions, as well as educational metadata that can be used to render blink UIs. \n\nGet started by editing `/src/app/api/actions/donate-mon/route.ts`",
   },
   {
-    headline: "Change the URL in the source code",
-    text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  },
-  {
-    headline: "Change the image or test in the local blink",
-    text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  },
-  {
-    headline: "Once your blink is redy, take it to dial.to",
-    text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    icon: "icon-code",
+    chip: {
+      text: "Frontend",
+      icon: "icon-code",
+    },
+    headline: "Blink UI",
+    text: "Dialect's blinks UI components libraries can be used to render the blink data returned from the blink API backend. \n\nGet started by editing `src/app/page.tsx`",
   },
 ];
 
@@ -50,20 +52,22 @@ export default function Home() {
 
   // Action we want to execute in the Blink
   const { action, isLoading } = useAction({
-    url: "evm-action:http://localhost:3000/api/actions/donate-mon",
+    url: "evm-action:http://localhost:3000/api/actions/tip-mon",
   });
 
   return (
     <main className="grid grid-cols-[2fr_3fr] h-[calc(100vh-64px)]">
       <div className="col-span-1 p-8 pr-16 overflow-y-auto">
-        <h1 className="text-4xl mb-2 font-bold">GMonad!</h1>
-        <h2 className="text-2xl">
-          Welcome to the Monad Blink Starter Tutorial!
+        <h1 className="text-[40px] mb-3 font-bold leading-[1]">
+          Monad Blinks Starter Template
+        </h1>
+        <h2 className="text-[18px] mb-2">
+          Use this template project to get started developing your blink.
         </h2>
         {steps.map((step, i) => (
           <StepCard
             key={i}
-            step={`Step ${++i}`}
+            chip={step.chip}
             headline={step.headline}
             text={step.text}
           />

@@ -8,23 +8,23 @@ import { MenuButton } from "./menu-button";
 const navBarLinks = [
   {
     logoName: "logo-github",
-    text: "View the code",
+    text: "View code",
     href: "https://github.com/dialectlabs/blink-starter-monad",
+  },
+  {
+    logoName: "logo-frame",
+    text: "Guide",
+    href: "https://docs.dialect.to",
+  },
+  {
+    logoName: "logo-readme",
+    text: "Register blink",
+    href: "https://terminal.dial.to",
   },
   {
     logoName: "logo-globe",
     text: "Explore blinks",
     href: "https://dial.to",
-  },
-  {
-    logoName: "logo-frame",
-    text: "Setup blinks",
-    href: "https://terminal.dial.to",
-  },
-  {
-    logoName: "logo-readme",
-    text: "Read more",
-    href: "https://docs.dialect.to",
   },
 ];
 

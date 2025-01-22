@@ -1,11 +1,19 @@
-interface ChipProps {
+import Image from "next/image";
+
+export interface ChipProps {
+  icon?: string;
   text: string;
 }
 
-export function Chip({ text }: ChipProps) {
+export function Chip({ icon, text }: ChipProps) {
   return (
-    <p className="text-[14px] border text-green-400 border-green-800 rounded-[10px] px-2 py-1 mt-4 mb-2  inline-block bg-opacity-10 bg-green-500">
-      {text}
-    </p>
+    <div className="inline-flex items-center text-[14px] text-[#7FFBAB] border border-green-800 rounded-[10px] px-2 py-1 mt-4 mb-2 bg-opacity-10 bg-green-500">
+      {icon && (
+        <div className="relative mr-2 w-5 h-5">
+          <Image src={`/${icon}.svg`} alt={`${icon} icon`} fill />
+        </div>
+      )}
+      <p>{text}</p>
+    </div>
   );
 }

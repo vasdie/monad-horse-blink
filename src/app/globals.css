@@ -21,10 +21,9 @@ body {
 
 .blink.x-dark {
   --blink-button: #ffffff;
-  --blink-button-hover: #979292;
+  --blink-button-hover: #999999;
   --blink-text-button: #000000;
-  --blink-stroke-primary: #979292;
+  --blink-stroke-primary: #666666;
   --blink-text-brand: #ffffff;
-  --blink-shadow-container: 0px 2px 8px 0px rgba(255, 255, 255, 0.22),
-    0px 1px 48px 0px rgba(145, 145, 145, 0.24);
+  --blink-shadow-container: 0px 0px 0px 0.1px #666666;
 }

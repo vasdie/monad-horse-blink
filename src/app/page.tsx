@@ -56,8 +56,10 @@ export default function Home() {
   return (
     <main className="grid grid-cols-[2fr_3fr] h-[calc(100vh-64px)]">
       <div className="col-span-1 p-8 pr-16 overflow-y-auto">
-        <h1 className="text-2xl font-bold">GMonad!</h1>
-        <p>Welcome to the Monad Blink Starter Tutorial!</p>
+        <h1 className="text-4xl mb-2 font-bold">GMonad!</h1>
+        <h2 className="text-2xl">
+          Welcome to the Monad Blink Starter Tutorial!
+        </h2>
         {steps.map((step, i) => (
           <StepCard
             key={i}
@@ -68,7 +70,7 @@ export default function Home() {
         ))}
       </div>
 
-      <div className=" flex items-center justify-center border border-gray-600 rounded-md m-4">
+      <div className=" flex items-center justify-center border border-gray-600 rounded-[10px] m-4">
         {isLoading || !action ? (
           <span>Loading</span>
         ) : (

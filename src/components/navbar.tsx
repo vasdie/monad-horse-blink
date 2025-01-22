@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { ConnectKitButton } from "connectkit";
 
 export function Navbar() {
   return (
@@ -25,15 +28,42 @@ export function Navbar() {
         />
       </Link>
 
-      {/* X (Twitter) Follow Link */}
-      <Link
-        href="https://x.com/saydialect"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-sm text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white transition-colors"
-      >
-        Follow on X
-      </Link>
+      {/* Social Links and Connect Button */}
+      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          <Link
+            href="https://x.com/saydialect"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+            aria-label="Follow on X"
+          >
+            <Image
+              src="/icon-x.svg"
+              alt="X (Twitter)"
+              width={20}
+              height={20}
+              className="h-5 w-5"
+            />
+          </Link>
+          <Link
+            href="https://github.com/dialectlabs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+            aria-label="View on GitHub"
+          >
+            <Image
+              src="/icon-github.svg"
+              alt="GitHub"
+              width={20}
+              height={20}
+              className="h-5 w-5"
+            />
+          </Link>
+        </div>
+        <ConnectKitButton />
+      </div>
     </nav>
   );
 }

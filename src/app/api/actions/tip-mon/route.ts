@@ -5,8 +5,8 @@ import { parseEther } from "viem";
 // CAIP-2 format for Monad
 const blockchain = "eip155:20143";
 
-// Wallet address that will receive the donations
-const donationWallet = `${process.env.DONATION_WALLET}`;
+// Wallet address that will receive the tips
+const donationWallet = "0xd2135CfB216b74109775236E36d4b433F1DF507B"; // wevm.eth multichain wallet
 
 // Create headers with CAIP blockchain ID
 const headers = {
@@ -31,11 +31,11 @@ export const GET = async (req: Request) => {
   // This JSON is used to render the Blink UI
   const response: ActionGetResponse = {
     type: "action",
-    icon: `${new URL("/transfer-mon.png", req.url).toString()}`,
+    icon: `${new URL("/tip-mon-wevm.png", req.url).toString()}`,
     label: "1 MON",
-    title: "Tip $MON",
+    title: "Tip $MON, support Open Source",
     description:
-      "Send $MON on the Monad Blockchain to a wallet. Choose recommended amount, or provide a custom amount.",
+      "Support wevm, creators of wagmi and viem, by tipping them $MON on the Monad Blockchain. Choose recommended amount, or provide a custom amount.",
     // Links is used if you have multiple actions or if you need more than one params
     links: {
       actions: [

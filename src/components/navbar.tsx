@@ -3,64 +3,59 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ConnectKitButton } from "connectkit";
+import { MenuButton } from "./menu-button";
+
+const navBarLinks = [
+  {
+    logoName: "logo-github",
+    text: "View code",
+    href: "https://github.com/dialectlabs/blink-starter-monad",
+  },
+  {
+    logoName: "logo-frame",
+    text: "Guide",
+    href: "https://docs.dialect.to",
+  },
+  {
+    logoName: "logo-readme",
+    text: "Register blink",
+    href: "https://terminal.dial.to",
+  },
+  {
+    logoName: "logo-globe",
+    text: "Explore blinks",
+    href: "https://dial.to",
+  },
+];
 
 export function Navbar() {
   return (
-    <nav className="w-full px-4 py-3 flex justify-between items-center border-b border-gray-800 dark:border-gray-800">
+    <nav className="w-full px-4 py-3 flex justify-between items-center ">
       {/* Dialect Logo */}
       <Link
         href="https://www.dialect.to/"
-        className="flex items-center relative h-[30px] w-[120px]"
+        className="flex items-center h-[30px] w-[250px]"
       >
         <Image
-          src="/dialect-logo-black.png"
+          src="/dialect-monad-logo.png"
           alt="Dialect Logo"
-          width={120}
+          width={250}
           height={30}
-          className="object-contain absolute dark:opacity-0"
-        />
-        <Image
-          src="/dialect-logo-white.png"
-          alt="Dialect Logo"
-          width={120}
-          height={30}
-          className="object-contain absolute opacity-0 dark:opacity-100"
+          className="object-contain"
         />
       </Link>
 
       {/* Social Links and Connect Button */}
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-3">
-          <Link
-            href="https://x.com/saydialect"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
-            aria-label="Follow on X"
-          >
-            <Image
-              src="/icon-x.svg"
-              alt="X (Twitter)"
-              width={20}
-              height={20}
-              className="h-5 w-5"
+          {navBarLinks.map((link) => (
+            <MenuButton
+              key={link.text}
+              logoName={link.logoName}
+              text={link.text}
+              href={link.href}
             />
-          </Link>
-          <Link
-            href="https://github.com/dialectlabs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
-            aria-label="View on GitHub"
-          >
-            <Image
-              src="/icon-github.svg"
-              alt="GitHub"
-              width={20}
-              height={20}
-              className="h-5 w-5"
-            />
-          </Link>
+          ))}
         </div>
         <ConnectKitButton />
       </div>

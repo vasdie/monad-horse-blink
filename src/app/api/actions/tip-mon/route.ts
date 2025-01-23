@@ -31,11 +31,11 @@ export const GET = async (req: Request) => {
   // This JSON is used to render the Blink UI
   const response: ActionGetResponse = {
     type: "action",
-    icon: `${new URL("/donate-mon.png", req.url).toString()}`,
+    icon: `${new URL("/transfer-mon.png", req.url).toString()}`,
     label: "1 MON",
-    title: "Donate MON",
+    title: "Tip $MON",
     description:
-      "This Blink demonstrates how to donate MON on the Monad blockchain. It is a part of the official Blink Starter Guides by Dialect Labs.  \n\nLearn how to build this Blink: https://dialect.to/docs/guides/donate-mon",
+      "Send $MON on the Monad Blockchain to a wallet. Choose recommended amount, or provide a custom amount.",
     // Links is used if you have multiple actions or if you need more than one params
     links: {
       actions: [
@@ -44,22 +44,22 @@ export const GET = async (req: Request) => {
           type: "transaction",
           label: "0.01 MON",
           // This is the endpoint for the POST request
-          href: `/api/actions/donate-mon?amount=0.01`,
+          href: `/api/actions/tip-mon?amount=0.01`,
         },
         {
           type: "transaction",
           label: "0.05 MON",
-          href: `/api/actions/donate-mon?amount=0.05`,
+          href: `/api/actions/tip-mon?amount=0.05`,
         },
         {
           type: "transaction",
           label: "0.1 MON",
-          href: `/api/actions/donate-mon?amount=0.1`,
+          href: `/api/actions/tip-mon?amount=0.1`,
         },
         {
           // Example for a custom input field
           type: "transaction",
-          href: `/api/actions/donate-mon?amount={amount}`,
+          href: `/api/actions/tip-mon?amount={amount}`,
           label: "Donate",
           parameters: [
             {

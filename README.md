@@ -23,7 +23,6 @@ cp .env.example .env
 
 2. Configure the following environment variables:
 
-- `NEXT_PUBLIC_CHAIN_ID`: Monad chain ID
 - `NEXT_PUBLIC_RPC_URL`: Monad RPC URL
 - `DONATION_WALLET`: The wallet address to receive donations
 

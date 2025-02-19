@@ -5,7 +5,7 @@ A Next.js-based starter template demonstrating how to integrate [Blinks](https:/
 ## Guide 🔥🔥🔥
 
 Learn how to build this Blink from scratch with our extensive guide:
-https://dialectlabs.notion.site/Donate-MON-with-a-Blink-17b478e30ab08072bbf1c21f760cf79d
+https://docs.dialect.to/documentation/actions/guides/monad-starter-guides
 
 ## Prerequisites
 

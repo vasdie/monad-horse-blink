@@ -31,7 +31,7 @@ export const GET = async (req: Request) => {
   // This JSON is used to render the Blink UI
   const response: ActionGetResponse = {
     type: "action",
-    icon: `${new URL("/tip-mon-wevm.png", req.url).toString()}`,
+    icon: `${new URL("/tip-mon.png", req.url).toString()}`,
     label: "1 MON",
     title: "Tip $MON, support Open Source",
     description:
@@ -95,7 +95,7 @@ export const POST = async (req: Request) => {
     const transaction = {
       to: donationWallet,
       value: parseEther(amount).toString(),
-      chainId: process.env.NEXT_PUBLIC_CHAIN_ID,
+      chainId: "10143",
     };
 
     const transactionJson = serialize(transaction);
@@ -104,7 +104,7 @@ export const POST = async (req: Request) => {
     const response: ActionPostResponse = {
       type: "transaction",
       transaction: transactionJson,
-      message: "Your donation has been sent!",
+      message: "Your tip has been sent!",
     };
 
     // Return the response with proper headers

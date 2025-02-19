@@ -14,7 +14,7 @@ const navBarLinks = [
   {
     logoName: "logo-frame",
     text: "Guide",
-    href: "https://docs.dialect.to",
+    href: "https://docs.dialect.to/documentation/actions/guides/monad-starter-guides",
   },
   {
     logoName: "logo-readme",

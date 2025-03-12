@@ -2,7 +2,7 @@
 
 import {
   Blink,
-  useAction,
+  useBlink,
   useActionsRegistryInterval,
 } from "@dialectlabs/blinks";
 
@@ -51,7 +51,7 @@ export default function Home() {
   });
 
   // Action we want to execute in the Blink
-  const { action, isLoading } = useAction({
+  const { blink, isLoading } = useBlink({
     url: "evm-action:http://localhost:3000/api/actions/tip-mon",
   });
 
@@ -75,12 +75,12 @@ export default function Home() {
       </div>
 
       <div className=" flex items-center justify-center border border-gray-600 rounded-[10px] m-4">
-        {isLoading || !action ? (
+        {isLoading || !blink ? (
           <span>Loading</span>
         ) : (
           <div className="w-full max-w-lg">
             <Blink
-              action={action}
+              blink={blink}
               adapter={adapter}
               securityLevel="all"
               stylePreset="x-dark"

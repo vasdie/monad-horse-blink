@@ -2,6 +2,8 @@
 
 A Next.js-based starter template demonstrating how to integrate [Blinks](https://docs.dialect.to/blinks/) with the Monad blockchain. This project showcases a simple donation application that allows users to send MON (Monad's native currency) to a specified wallet address.
 
+![Blink Scaffold for Monad](/public/screenshot-blink-scaffold-monad.png)
+
 ## Guide 🔥🔥🔥
 
 Learn how to build this Blink from scratch with our extensive guide:

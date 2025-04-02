@@ -1,11 +1,11 @@
 # Blink Starter for Monad
 
-A Next.js-based starter template demonstrating how to integrate [Blinks](https://dialect.to/) with the Monad blockchain. This project showcases a simple donation application that allows users to send MON (Monad's native currency) to a specified wallet address.
+A Next.js-based starter template demonstrating how to integrate [Blinks](https://docs.dialect.to/blinks/) with the Monad blockchain. This project showcases a simple donation application that allows users to send MON (Monad's native currency) to a specified wallet address.
 
 ## Guide 🔥🔥🔥
 
 Learn how to build this Blink from scratch with our extensive guide:
-https://docs.dialect.to/documentation/actions/guides/monad-starter-guides
+https://docs.dialect.to/blinks/blinks-provider/guides/tip-blink
 
 ## Prerequisites
 
@@ -15,13 +15,9 @@ https://docs.dialect.to/documentation/actions/guides/monad-starter-guides
 
 ## Environment Setup
 
-1. Copy the example environment file:
+In the `.env` file, we have preset a `DONATION_WALLET` address as well as the public RPC endpoint for the Monad testnet.
 
-```bash
-cp .env.example .env
-```
-
-2. Configure the following environment variables:
+If you prefer to use your own wallet or RPC, please update the `.env` file accordingly.
 
 - `NEXT_PUBLIC_RPC_URL`: Monad RPC URL
 - `DONATION_WALLET`: The wallet address to receive donations

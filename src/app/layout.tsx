@@ -1,26 +1,22 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Navbar } from "@/components/navbar";
-
-// Providers are used to wrap the app in Wagmi and ConnectKit
-import { Providers } from "@/provider";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Blink Starter Guides - Monad",
-  description:
-    "This website contains starter guides that teach you how to build Blinks on the Monad blockchain.",
+  title: 'Free Mint Monad Horse NFT',
+  description: 'Mint your free Monad Horse NFT',
+  openGraph: {
+    title: 'Free Mint Monad Horse NFT',
+    description: 'Mint your free Monad Horse NFT',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Mint Monad Horse NFT',
+    description: 'Mint your free Monad Horse NFT',
+  },
 };
 
 export default function RootLayout({
@@ -30,14 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {/* Providers are used to wrap the app in Wagmi and ConnectKit */}
-        <Providers>
-          <Navbar />
-          {children}
-        </Providers>
+      <body className={inter.className}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

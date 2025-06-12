@@ -5,9 +5,9 @@ import { parseEther, encodeFunctionData } from "viem";
 // CAIP-2 format for Monad
 const blockchain = "eip155:10143";
 
-// Your deployed FREE MINT Monad Horse NFT contract
-const nftContractAddress = "0x8039B1664E9Ca36138F0B4a1DcF60aF4EB77E305";
-const mintPrice = "0"; // FREE MINT!
+// Your deployed Monad Horse NFT contract (updated with Pinata gateway)
+const nftContractAddress = "0x07D8aB191308AeC587EAefeb613e124f25b23705";
+const mintPrice = "0.5"; // 0.5 MON
 
 // NFT contract ABI for mint function
 const nftAbi = [
@@ -29,7 +29,7 @@ const headers = {
   "Access-Control-Expose-Headers": "x-blockchain-ids, x-action-version",
   "Content-Type": "application/json",
   "x-blockchain-ids": blockchain,
-  "x-action-version": "2.2.1",
+  "x-action-version": "2.4",
 };
 
 // OPTIONS endpoint is required for CORS preflight requests
@@ -41,17 +41,17 @@ export const OPTIONS = async () => {
 export const GET = async (req: Request) => {
   const response: ActionGetResponse = {
     type: "action",
-    icon: `${new URL("/monad-horse.png", req.url).toString()}`,
-    label: "Free Mint",
-    title: "🆓 Free Mint Your Monad Horse NFT",
+    icon: `${new URL("/tip-mon.png", req.url).toString()}`,
+    label: "Mint Monad Horse",
+    title: "🐴 Mint Your Monad Horse NFT",
     description:
-      "🆓 FREE MINT your exclusive Monad Horse NFT! Open edition collection on Monad blockchain. Completely FREE - no cost!",
+      "Mint your exclusive Monad Horse NFT! Open edition collection on Monad blockchain. Only 0.5 MON per mint.",
     links: {
       actions: [
         {
           type: "transaction",
-          label: "🆓 Free Mint Monad Horse",
-          href: `${new URL("/api/actions/tip-mon", req.url).toString()}`,
+          label: "🐴 Mint Monad Horse (0.5 MON)",
+          href: `/api/actions/tip-mon`,
         },
       ],
     },
@@ -64,7 +64,7 @@ export const GET = async (req: Request) => {
 };
 
 // POST endpoint handles the actual transaction creation
-export const POST = async () => {
+export const POST = async (req: Request) => {
   try {
     // Encode the mint function call
     const data = encodeFunctionData({
@@ -73,7 +73,7 @@ export const POST = async () => {
       args: [],
     });
 
-    // Build the transaction to call the NFT contract (FREE!)
+    // Build the transaction to call the NFT contract
     const transaction = {
       to: nftContractAddress,
       value: parseEther(mintPrice).toString(),
@@ -86,7 +86,7 @@ export const POST = async () => {
     const response: ActionPostResponse = {
       type: "transaction",
       transaction: transactionJson,
-      message: "🆓🐴 Your FREE Monad Horse NFT has been minted! Check your wallet! 🎉",
+      message: "🐴 Your Monad Horse NFT has been minted! Check your wallet! 🎉",
     };
 
     return new Response(JSON.stringify(response), {

@@ -52,7 +52,7 @@ export default function Home() {
 
   // Action we want to execute in the Blink
   const { blink, isLoading } = useBlink({
-    url: "evm-action:http://localhost:3000/api/actions/tip-mon",
+    url: `evm-action:${typeof window !== 'undefined' ? window.location.origin : 'https://monad-horse-blink-jolpgtaqk-diegovas-projects.vercel.app'}/api/actions/tip-mon`,
   });
 
   return (

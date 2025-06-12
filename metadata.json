@@ -1,0 +1,19 @@
+{
+  "name": "Monad Horse",
+  "description": "A unique Monad Horse NFT from the open edition collection. Minted on the Monad blockchain.",
+  "image": "ipfs://bafkreif2svlhm57raxstay42m76ekti23fkwgde4ctt6k62o4c5hldr3me",
+  "attributes": [
+    {
+      "trait_type": "Collection",
+      "value": "Monad Horse"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Open Edition"
+    },
+    {
+      "trait_type": "Blockchain",
+      "value": "Monad"
+    }
+  ]
+}

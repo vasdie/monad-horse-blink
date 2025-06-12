@@ -45,7 +45,7 @@ export const GET = async (req: Request) => {
     label: "Free Mint",
     title: "🆓 Free Mint Your Monad Horse NFT",
     description:
-      "🆓 FREE MINT your exclusive Monad Horse NFT! Open edition collection on Monad blockchain. Completely FREE - no cost!",
+      "",
     links: {
       actions: [
         {
